@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:padding="10dp"
-            android:text="father" />
+            android:text="son" />
 
         <TextView
             android:id="@+id/daughter"
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:padding="10dp"
-            android:text="father" />
+            android:text="daughter" />
 
         <TextView
             android:id="@+id/flat"
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:padding="10dp"
-            android:text="father" />
+            android:text="flat" />
     </LinearLayout>
 
 </RelativeLayout>
