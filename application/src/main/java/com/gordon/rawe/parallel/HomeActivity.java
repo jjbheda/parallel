@@ -12,19 +12,15 @@ import java.io.File;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private View father, son, daughter, flat;
+    private View father, flat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         father = findViewById(R.id.father);
-        son = findViewById(R.id.son);
-        daughter = findViewById(R.id.daughter);
         flat = findViewById(R.id.flat);
         father.setOnClickListener(this);
-        son.setOnClickListener(this);
-        daughter.setOnClickListener(this);
         flat.setOnClickListener(this);
     }
 
@@ -36,12 +32,12 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
-        } else if (v.getId() == R.id.son) {
-            testDiffPatch();
-        } else if (v.getId() == R.id.daughter) {
-
-        } else if (v.getId() == R.id.flat) {
-
+        }  else if (v.getId() == R.id.flat) {
+            try {
+                startActivity(new Intent(this, Class.forName("com.gordon.rawe.flat.FlatHomeActivity")));
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
         }
     }
 

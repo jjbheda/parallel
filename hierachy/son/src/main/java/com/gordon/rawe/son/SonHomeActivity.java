@@ -1,10 +1,13 @@
 package com.gordon.rawe.son;
 
 import android.app.Activity;
-
-/**
- * Created by gordon on 06/01/2017.
- */
+import android.os.Bundle;
 
 public class SonHomeActivity extends Activity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.son_layout);
+    }
 }
