@@ -26,6 +26,12 @@ public class FatherHomeActivity extends Activity implements View.OnClickListener
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
+        } else if (v.getId() ==R.id.daughter){
+            try {
+                startActivity(new Intent(this,Class.forName("com.gordon.rawe.daughter.DaughterHomeActivity")));
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

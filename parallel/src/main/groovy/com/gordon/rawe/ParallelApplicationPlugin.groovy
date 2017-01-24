@@ -48,7 +48,7 @@ public class ParallelApplicationPlugin implements Plugin<Project> {
                 configureResignTask(project)
                 configureRealignTask(project)
                 configureConcatMappingsTask(project)
-                letsGo(project)
+                parallelAssembleAll(project)
             }
         }
     }
@@ -291,10 +291,10 @@ public class ParallelApplicationPlugin implements Plugin<Project> {
         project.logger.info("$project.path configure $TaskNames.CONCAT_MAPPINGS end...")
     }
 
-    private void letsGo(Project project) {
+    private void parallelAssembleAll(Project project) {
         project.logger.info("$project.path configure $TaskNames.GO start...")
-        Task letsGo = project.tasks.create(TaskNames.GO, Task.class)
-        letsGo.dependsOn TaskNames.CONCAT_MAPPINGS
+        Task parallelAssembleAll = project.tasks.create(TaskNames.GO, Task.class)
+        parallelAssembleAll.dependsOn TaskNames.CONCAT_MAPPINGS
         project.logger.info("$project.path configure $TaskNames.GO end...")
     }
 }
