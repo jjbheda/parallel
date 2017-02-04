@@ -12,6 +12,7 @@ import org.gradle.api.tasks.Exec
 import org.gradle.api.tasks.bundling.Zip
 import org.gradle.api.tasks.compile.JavaCompile
 import proguard.gradle.ProGuardTask
+import com.gordon.rawe.utils.TimeListener
 
 public class ParallelLibraryPlugin implements Plugin<Project> {
     private ParallelLibraryOptions libraryOptions;
@@ -27,7 +28,7 @@ public class ParallelLibraryPlugin implements Plugin<Project> {
 
     @Override
     public void apply(Project project) {
-
+        project.gradle.addListener(new TimeListener())
         libraryOptions = project.extensions.create(ParallelLibraryOptions.optionsName, ParallelLibraryOptions.class);
         project.afterEvaluate {
             project.logger.info("$project.path start to configure...")

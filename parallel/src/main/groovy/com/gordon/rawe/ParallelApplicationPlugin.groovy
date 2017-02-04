@@ -10,6 +10,7 @@ import org.gradle.api.file.FileCollection
 import org.gradle.api.tasks.Copy
 import org.gradle.api.tasks.Exec
 import org.gradle.api.tasks.bundling.Zip
+import com.gordon.rawe.utils.TimeListener
 
 import java.util.zip.ZipEntry
 import java.util.zip.ZipFile
@@ -20,6 +21,7 @@ public class ParallelApplicationPlugin implements Plugin<Project> {
 
     @Override
     void apply(Project project) {
+        project.gradle.addListener(new TimeListener())
         applicationOptions = project.extensions.create(ParallelApplicationOptions.optionsName, ParallelApplicationOptions.class)
         project.afterEvaluate {
             boolean checkCondition = true
